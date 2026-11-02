@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #17243a;
+  --muted: #6c7890;
+  --line: #e5eaf2;
+  --blue: #315de8;
+  --blue-dark: #2348c7;
+  --bg: #f5f7fc;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 82% 8%, #e5edff 0, transparent 28%), var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+.shell { width: min(900px, calc(100% - 40px)); margin: 0 auto; }
+.topbar { height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e4e9f2; }
+.brand { display: flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font: 800 20px Manrope, sans-serif; letter-spacing: -.7px; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--blue); color: white; font-size: 18px; }
+.brand-light { color: var(--blue); }
+.status { color: var(--muted); font-size: 12px; font-weight: 600; }
+.status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #25b77a; margin-right: 7px; }
+.intro { padding: 58px 0 30px; max-width: 650px; }
+.eyebrow { margin: 0 0 12px; color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: 1.8px; }
+h1, h2 { font-family: Manrope, sans-serif; }
+h1 { margin: 0; font-size: clamp(38px, 7vw, 60px); line-height: 1.08; letter-spacing: -2.8px; }
+h1 span { color: var(--blue); }
+.subtitle { max-width: 590px; margin: 18px 0 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.panel { padding: 30px; background: white; border: 1px solid #e8edf5; border-radius: 18px; box-shadow: 0 18px 55px rgba(36, 57, 103, .07); }
+.panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid var(--line); margin-bottom: 23px; }
+.panel-heading .eyebrow { margin-bottom: 6px; }
+h2 { margin: 0; font-size: 21px; letter-spacing: -.6px; }
+.cloud-tag { padding: 8px 11px; border-radius: 20px; background: #eef2ff; color: #3556bd; font-size: 11px; font-weight: 700; white-space: nowrap; }
+label { display: block; margin: 17px 0 8px; font-size: 12px; font-weight: 700; color: #35435b; }
+input, select, textarea { display: block; width: 100%; border: 1px solid #dfe5ef; border-radius: 9px; padding: 12px 13px; color: var(--ink); background: #fff; font: 14px "DM Sans", sans-serif; outline: none; transition: border .2s, box-shadow .2s; }
+input:focus, select:focus, textarea:focus { border-color: #8299f5; box-shadow: 0 0 0 3px #315de817; }
+textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+input::placeholder, textarea::placeholder { color: #a1aabc; }
+.label-row { display: flex; align-items: center; justify-content: space-between; }
+.label-row label { margin-bottom: 8px; }
+#charCount { color: #8a95a8; font-size: 11px; }
+button { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 22px; padding: 14px 17px; border: 0; border-radius: 9px; background: var(--blue); color: white; font: 700 14px "DM Sans", sans-serif; cursor: pointer; transition: background .2s, transform .2s; }
+button:hover { background: var(--blue-dark); transform: translateY(-1px); }
+button:disabled { opacity: .65; cursor: wait; transform: none; }
+.hint { margin: 12px 0 0; color: #8994a7; font-size: 11px; line-height: 1.6; }
+.feedback { margin-top: 18px; padding: 13px 15px; border-radius: 9px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.feedback.success { background: #eaf8f1; color: #16734b; }
+.feedback.error { background: #fff0ef; color: #a83a32; }
+footer { display: flex; justify-content: space-between; gap: 15px; padding: 25px 2px 35px; color: #8b96a8; font-size: 11px; }
+@media (max-width: 600px) {
+  .shell { width: min(100% - 28px, 900px); }
+  .topbar { height: 70px; }
+  .status { font-size: 10px; }
+  .intro { padding-top: 42px; }
+  .panel { padding: 21px 17px; }
+  .panel-heading { align-items: flex-start; flex-direction: column; }
+  footer { flex-direction: column; }
+}

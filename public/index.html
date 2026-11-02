@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send announcements to confirmed email subscribers using Amazon SNS.">
+  <title>QuickNotify | Notification Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="QuickNotify home">
+        <span class="brand-mark">Q</span>
+        <span>Quick<span class="brand-light">Notify</span></span>
+      </a>
+      <span class="status"><span class="status-dot"></span> SNS notification center</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">CAMPUS COMMUNICATION</p>
+      <h1>One message.<br><span>Everyone informed.</span></h1>
+      <p class="subtitle">Create an announcement and publish it to your confirmed email subscribers through Amazon Simple Notification Service.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">NEW ANNOUNCEMENT</p>
+          <h2>Compose notification</h2>
+        </div>
+        <span class="cloud-tag">Powered by AWS SNS</span>
+      </div>
+
+      <form id="notificationForm">
+        <label for="title">Notification title</label>
+        <input id="title" name="title" type="text" maxlength="100" placeholder="e.g. Cloud Computing Lab Update" required>
+
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option>General</option>
+          <option>Academic</option>
+          <option>Examination</option>
+          <option>Events</option>
+          <option>Emergency</option>
+        </select>
+
+        <div class="label-row">
+          <label for="message">Message</label>
+          <span id="charCount">0 / 3000</span>
+        </div>
+        <textarea id="message" name="message" rows="6" maxlength="3000" placeholder="Write the announcement you want to send..." required></textarea>
+
+        <button id="sendButton" type="submit">
+          <span>Publish notification</span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <p class="hint">This publishes to your configured SNS topic. Only confirmed email subscriptions receive the message.</p>
+      </form>
+
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <footer>
+      <span>QuickNotify</span>
+      <span>Built with Node.js · Express · Amazon SNS</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
